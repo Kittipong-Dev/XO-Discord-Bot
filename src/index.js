@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config()
 import { Client, IntentsBitField, EmbedBuilder } from 'discord.js';
-import { xoComponent } from './send-message.js';
+import { xoComponent } from './xoComponent.js';
 
 const client = new Client({
     intents: [
@@ -43,7 +43,6 @@ client.on('interactionCreate', async (interaction) => {
         
         if (interaction.isButton()) {    
             if (interaction.customId && ((board[parseInt(interaction.customId) - 1]) === 0)) {
-                console.log('In')
                 if (turn === 0) {
                     board[parseInt(interaction.customId) - 1] = 1
                 }
